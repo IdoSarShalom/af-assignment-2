@@ -1,8 +1,9 @@
 import time
+
 import game_grid as gr
+from alphabeta import alphabeta
 from game_class import Game
 from minimax import minimax
-from alphabeta import alphabeta
 
 TEST_1_SCORE = 16
 TEST_2_SCORE = 19
@@ -24,7 +25,7 @@ def print_last_move(moves):
     for game in moves:
         grids.append(game.get_grid())
     for move in grids[0]:
-            print(move)
+        print(move)
 
 
 def init_game_minimax(grid=1):
@@ -54,13 +55,14 @@ def init_game_alphabeta(grid=1):
 
 def test_minimax(game=1, print_all_moves=False, print_last=False):
     start_time = time.time()
-    score, moves = init_game_minimax(game)  
+    score, moves = init_game_minimax(game)
     print("Running time: %s seconds" % (time.time() - start_time))
     if print_all_moves:
         print_moves(moves)
     if print_last:
         print_last_move(moves)
     return score
+
 
 def test_alphabeta(game=1, print_all_moves=False, print_last=False):
     start_time = time.time()

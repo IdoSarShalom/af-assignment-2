@@ -1,5 +1,3 @@
-
-
 def minimax(current_game):
     """
     :param current_game: Game Class Object

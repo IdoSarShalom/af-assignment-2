@@ -1,11 +1,9 @@
-
-
 def alphabeta(current_game):
     """
     :param current_game: the first GameClass object of the game
     :return: result of recursive alphabeta
     """
-    return recursive_alphabeta(current_game, -1, current_game.max_steps()+2)
+    return recursive_alphabeta(current_game, -1, current_game.max_steps() + 2)
 
 
 def recursive_alphabeta(current_game, alpha, beta):

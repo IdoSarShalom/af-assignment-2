@@ -1,7 +1,3 @@
-import numpy as np
-import math
-
-
 class Game:
     def __init__(self, grid, start_location, score=0):
         """
@@ -14,7 +10,7 @@ class Game:
         if self.__grid[start_location[0]][start_location[1]] != 'W':
             self.__grid[start_location[0]][start_location[1]] = 'X'
         self.__score = score
-        if score%3 > 1:
+        if score % 3 > 1:
             self.__cur_player = 2
         else:
             self.__cur_player = 1
@@ -32,11 +28,11 @@ class Game:
         moves = []
         # Check right
         if x + 1 < len(grid):
-            if grid[x + 1][y] != '@' and grid[x+1][y] != 'X':
+            if grid[x + 1][y] != '@' and grid[x + 1][y] != 'X':
                 moves.append((x + 1, y))
         # Check left
         if x - 1 > 0:
-            if grid[x - 1][y] != '@' and grid[x-1][y] != 'X':
+            if grid[x - 1][y] != '@' and grid[x - 1][y] != 'X':
                 moves.append((x - 1, y))
         # Check up
         if y - 1 > 0:
@@ -66,10 +62,10 @@ class Game:
             if self.__cur_player == 2:
                 new_grid = list(map(list, self.__grid))
                 new_grid[move[0]][move[1]] = '@'
-                new_games.append(Game(new_grid, self.__p1_location, self.__score+1))
+                new_games.append(Game(new_grid, self.__p1_location, self.__score + 1))
             else:
                 new_grid = list(map(list, self.__grid))
-                new_games.append(Game(new_grid, move, self.__score+1))
+                new_games.append(Game(new_grid, move, self.__score + 1))
         return new_games
 
     def game_over(self):
@@ -117,5 +113,4 @@ class Game:
         """
         :return: value of max possible steps
         """
-        return len(self.__grid)*len(self.__grid)*3
-
+        return len(self.__grid) * len(self.__grid) * 3

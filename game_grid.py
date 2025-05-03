@@ -12,5 +12,3 @@ def create_grid(grid_num=1):
 
 def get_start_location():
     return tuple((0, 0))
-
-
